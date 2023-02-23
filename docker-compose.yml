@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   api:
-    container_name: codicaimg/server
+    container_name: codica_finance_manager_api
     restart: always
     build: .
     ports:

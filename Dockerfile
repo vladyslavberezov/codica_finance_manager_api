@@ -1,13 +1,13 @@
-FROM node
+FROM node As development
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY package.json /app
+COPY --chown=node:node package*.json ./
 
-RUN npm install
+RUN npm ci
 
-COPY . .
+COPY --chown=node:node . .
 
-EXPOSE 3001
+USER node
 
-CMD ["npm", "run", "start:dev"]
+

@@ -3,6 +3,7 @@ import * as process from 'process';
 
 module.exports = {
   dbPort: process.env.DB_PORT,
+  dbHost: process.env.DB_HOST,
   dbName: process.env.DB_NAME,
   host: process.env.HOST,
   dbDialect: process.env.DIALECT,

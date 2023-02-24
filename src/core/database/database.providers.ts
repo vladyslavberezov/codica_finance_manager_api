@@ -11,16 +11,16 @@ export const databaseProviders = [
     useFactory: async () => {
       const dataSource = new DataSource({
         type: 'postgres',
-        host: config.host,
-        port: config.port,
+        // host: config.host,    //config.host - usage with local db
+        host: config.dbHost, //config.dbHost - for docker-compose postgresql db
+        port: config.dbPort,
         username: config.dbUserEntry,
         password: config.dbPassword,
-        database: config.dbName,
+        database: 'postgres',
         entities: [Bank, Transactions, Category, CategoryTransactions],
         synchronize: true,
         // logging: true,
       });
-
       return dataSource.initialize();
     },
   },

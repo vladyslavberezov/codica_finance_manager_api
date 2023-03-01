@@ -1,4 +1,4 @@
-# Docker Compose setup for Codica :)
+# Docker Compose setup 
 
 ## Local setup
 
